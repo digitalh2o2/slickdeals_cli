@@ -1,5 +1,2 @@
-require "slickdeals_cli/version"
-
-module SlickdealsCli
-  # Your code goes here...
-end
+require_relative "./slickdeals_cli/version"
+require_relative "./slickdeals_cli/cli"
