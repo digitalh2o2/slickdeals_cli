@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/slickdeals_cli'
+require "bundler/setup"
+require "slickdeals_cli"
 
 SlickdealsCli::CLI.new.call
