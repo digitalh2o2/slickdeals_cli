@@ -1,6 +1,8 @@
 class SlickdealsCli::CLI
 
 	def call
+		popular_slickdeals
+		woot_deals
 		welcome		
 		user_choice
 		goodbye
@@ -11,14 +13,14 @@ class SlickdealsCli::CLI
 		puts "Welcome to your Slickdeals of the day!!"
 		puts "***************************************"
 		puts "What type of deals would you like to see?"	
-		todays_deals
-		#@deals = SlickdealsCli::Deal.feature
-		#@deals.each.with_index(1) do |deal, i|
-			#puts "#{i}: #{deal.name}"
-		#end
 	end
 
-	def todays_deals
+	def popular_slickdeals
+		pop_slick = SlickdealsCli::Deal.scrape_popular_slickdeals
+		@pop_deals = SlickdealsCli::Popular.create_popular_deal(pop_slick)
+	end
+
+	def woot_deals
 		@deals = SlickdealsCli::Deal.feature
 	end
 
@@ -28,11 +30,14 @@ class SlickdealsCli::CLI
 			puts "Type 1 for today's Popular Deals or 2 for the Deal of the day from Woot or exit:"
 			input = gets.strip.downcase
 			if input.to_i == 1
-				popular_deal = @deals[input.to_i-1]
-				puts "#{popular_deal.name}: #{popular_deal.price}."
-				puts "You can find this deal at #{popular_deal.url}"
+				popular_deal = @pop_deals
+				puts popular_deal
+				#puts "You can find this deal at #{popular_deal.url}"
 			elsif input.to_i == 2
-				frontpage_deals
+				woot_deal = @deals[input.to_i-1]
+				puts "Here are the deals from Woot!"
+				puts "#{woot_deal.name}: #{woot_deal.price}."
+				puts "You can find this deal at #{woot_deal.url}"
 			else
 				puts "Hmm, I'm not familiar with that input"
 			end
