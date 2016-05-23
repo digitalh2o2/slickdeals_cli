@@ -4,7 +4,6 @@ class SlickdealsCli::Popular
 	@@all = []
 
 	def initialize(deal_hash)
-		#binding.pry
 		deal_hash.each {|attr, value| self.send(("#{attr}="),value)}
 		@@all << self
 	end
