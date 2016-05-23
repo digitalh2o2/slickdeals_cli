@@ -2,7 +2,6 @@ class SlickdealsCli::Deal
 	attr_accessor :name, :price, :url, :seller
 
 	def self.feature
-		# This will call the scrape_deals method to scrape the slickdeals popular deals page
 		self.scrape_populardeals
 	end
 
@@ -11,9 +10,6 @@ class SlickdealsCli::Deal
 
 		popular_deals << self.scrape_popular_slickdeals
 		popular_deals << self.scrape_woot
-		# Will go to Slickdeals.net and scrape the Popular deals page and Woot homepage
-		# Extract the information
-		# Present to the user the Deals
 
 		popular_deals
 	end
