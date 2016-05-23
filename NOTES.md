@@ -9,8 +9,8 @@
 6) Start scraping the website to extract data - Complete*
 7) Create classes that speak to each other to bring that scraping data onto our CLI - Complete*
 8) Fine tune CLI and make sure inputs are all working correctly - Complete*
-9) Bundle gem
-10) Push gem
+9) Bundle gem - Complete*
+10) Push gem - Complete*
 
 
 
