@@ -14,10 +14,10 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://rubygems.org/gems/slickdeals_cli"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
+  spec.files         = "['lib/slickdeals_cli/cli.rb', 'lib/slickdeals_cli/deal.rb', 'lib/slickdeals_cli/popular.rb', 'lib/slickdeals_cli/version.rb', 'lib/slickdeals_cli.rb']"
+  spec.bindir        = "bin"
   spec.executables   = "slickdeals_cli"
-  spec.require_paths = ["lib"]
+  spec.require_paths = ["lib", "lib/slickdeals_cli.rb"]
 
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
